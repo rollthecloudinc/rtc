@@ -44,4 +44,13 @@ html, body { height: 100%; }
 body {
   font-family: "Libre Baskerville", serif;
   font-size: 1em;
+  background-color: #141b3f;
+}
+
+app-root {
+  display: block;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 1em;
 }
