@@ -1,3 +1,19 @@
 .outlet-wrapper {
   height: 100%;
 }
+
+.top-bar {
+  position: absolute;
+  top: .5em;
+  left: .5em;
+}
+
+.top-bar a {
+  background-color: white;
+  text-transform: capitalize;
+}
+
+.top-bar a  + a {
+  margin-left: .5em;
+  color: #141b3f;
+}
