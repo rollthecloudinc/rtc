@@ -53,6 +53,61 @@ body {
   line-height: 1.6;
 }
 
+.margin-t-1x {
+  margin-top: 1em;
+}
+
+.margin-t-2x {
+  margin-top: 2em;
+}
+
+.margin-b-1x {
+  margin-bottom: 1em;
+}
+
+.margin-b-2x {
+  margin-bottom: 2em;
+}
+
+.padding-t-x5 {
+  padding-top: .5em;
+}
+
+.padding-t-1x {
+  padding-top: 1em;
+}
+
+.padding-b-x5 {
+  padding-bottom: .5em;
+}
+.padding-b-1x {
+  padding-bottom: 1em;
+}
+
+.border-bottom-brand-light {
+  border-bottom: 1px solid #f5d109;
+}
+
+.font-size-15x {
+  font-size: 1.5em
+}
+
+.font-size-2x {
+  font-size: 2em
+}
+
+.font-size-25x {
+  font-size: 2.5em
+}
+
+.font-size-3x {
+  font-size: 3em
+}
+
+.font-color-brand-dark {
+  color: #141b3f;
+}
+
 .font-baskerville-regular {
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
@@ -69,6 +124,21 @@ body {
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   font-style: italic;
+}
+
+.font-copperplate-regular {
+  font-family: copperplate, serif;
+  font-style: normal;
+}
+
+.font-copperplate-bold {
+  font-family: copperplate, serif;
+  font-weight: bolder;
+  font-style: normal;
+}
+
+.img-width-70p {
+  width: 70%;
 }
 
 app-root {
