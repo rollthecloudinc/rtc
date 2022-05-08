@@ -34,7 +34,7 @@ export const environment = {
     endpointUrl: 'https://9iac3wy8ej.execute-api.us-east-1.amazonaws.com/media',
     cloudinaryUrl: 'https://api.cloudinary.com/v1_1/dj4vvkgzw',
     uploadPreset: 'i0hm4opm',
-    imageUrl: '@todo',
+    imageUrl: 'https://d1dzxx4k48izyu.cloudfront.net',
     bucket: 'classifieds-ui-prod',
     prefix: 'media/'
   },
@@ -72,10 +72,10 @@ export const environment = {
   clientSettings: {
     authority: 'https://classifieds-ui-prod.auth.us-east-1.amazoncognito.com',
     client_id: '37lke0kuqac07fs1mk9mp2h471',
-    redirect_uri: 'https://ng-druid.github.io/auth-callback',
+    redirect_uri: 'https://rollthecloud.com/auth-callback',
     // redirect_uri: 'https://uhf0kayrs4.execute-api.us-east-1.amazonaws.com/auth-callback',
     //redirect_uri: 'https://demo.ng-druid.com/auth-callback',
-    silent_redirect_uri: 'https://ng-druid.github.io/silent-refresh.html',
+    silent_redirect_uri: 'https://rollthecloud.com/silent-refresh.html',
     // silent_redirect_uri: 'https://uhf0kayrs4.execute-api.us-east-1.amazonaws.com/silent-refresh.html',
     // silent_redirect_uri: 'https://demo.ng-druid.com/silent-refresh.html',
     response_type: "code",

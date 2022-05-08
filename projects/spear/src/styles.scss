@@ -1,6 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 html, body { height: 100%; }
 
+a.standard-link {
+  color: #141b3f;
+  text-decoration: none;
+  border-bottom: 1px solid #f5d109;
+}
+
+a.standard-link:hover {
+  border-bottom: none;
+}
+
+.github-logo {
+  width: 20px;
+}
+
 /* libre-baskerville-regular - latin */
 @font-face {
   font-family: 'Libre Baskerville';
@@ -47,6 +61,10 @@ body {
 
 .txt-align-center {
   text-align: center;
+}
+
+.margin-l-x25 {
+  margin-left: .25em;
 }
 
 .line-height-16 {
@@ -176,4 +194,19 @@ app-root {
     left: 50%;
   }
 
+}
+
+.zero-container {
+  height: 125px;
+  position: relative;
+  line-height: 125px;
+  padding-left: 150px;
+  margin-top: 1em;
+}
+
+.zero-knockout {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

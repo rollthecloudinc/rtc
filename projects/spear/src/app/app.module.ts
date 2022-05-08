@@ -93,7 +93,7 @@ const routes = [
   /*{ path: 'pages', loadChildren: () => {
     return import('pages').then(m => m.PagesModule);
   } },*/
-  // { path: '', children: [] /*, component: HomeComponent*/ },
+  // { path: '', redirectTo: 'index' },
   //{ path: '**', component: NotFoundComponent }
   { path: '**', component: CatchAllRouterComponent, canActivate: [ CatchAllGuard ] }
   //{ path: '', redirectTo: 'pages', pathMatch: "full" }

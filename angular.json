@@ -138,7 +138,8 @@
             "main": "projects/spear/src/main.server.ts",
             "tsConfig": "projects/spear/tsconfig.server.json",
             "sourceMap": true,
-            "optimization": false
+            "optimization": false,
+            "verbose": true
           },
           "configurations": {
             "production": {
