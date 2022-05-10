@@ -10,6 +10,26 @@
   <link rel="stylesheet" href="https://use.typekit.net/rlg5nvz.css">
   <!-- required for integration with public api bridge -->
   <script type="text/javascript">var bridge;</script>
+  <!-- @todo: If this works well create dedicated awrum implementing app initializer w/ config for rum ts aws sdk -->
+  <!-- this could also be turned into a webpack plugin -->
+  <script>
+    (function(n,i,v,r,s,c,x,z){x=window.AwsRumClient={q:[],n:n,i:i,v:v,r:r,c:c};window[n]=function(c,p){x.q.push({c:c,p:p});};z=document.createElement('script');z.async=true;z.src=s;document.head.insertBefore(z,document.head.getElementsByTagName('script')[0]);})(
+      'cwr',
+      'f01cac45-bd1f-4792-a241-cd113222ee6a',
+      '1.0.0',
+      'us-east-1',
+      'https://client.rum.us-east-1.amazonaws.com/1.2.1/cwr.js',
+      {
+        sessionSampleRate: 1,
+        guestRoleArn: "arn:aws:iam::743614351321:role/Cognito_classifieds_prodUnauth_Role",
+        identityPoolId: "us-east-1:51af715f-31cf-4200-b43b-6c1ea1b62f5e",
+        endpoint: "https://dataplane.rum.us-east-1.amazonaws.com",
+        telemetries: ["performance","errors","http"],
+        allowCookies: true,
+        enableXRay: true
+      }
+    );
+  </script>
 </head>
 <body>
   <app-root></app-root>

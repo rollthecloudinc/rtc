@@ -77,6 +77,10 @@ const signingKeys = {
       loadUserInfo: true,
       automaticSilentRenew: true
     }*/
+    rumSettings: {
+      appId: 'f01cac45-bd1f-4792-a241-cd113222ee6a',
+      guestRoleArn: 'arn:aws:iam::743614351321:role/Cognito_classifieds_prodUnauth_Role'
+    },
     clientSettings: {
       authority: 'https://classifieds-ui-dev.auth.us-east-1.amazoncognito.com',
       client_id: '3lkidn79q4jq8nahkecsguleij',
