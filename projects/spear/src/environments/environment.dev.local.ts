@@ -79,7 +79,9 @@ const signingKeys = {
     }*/
     rumSettings: {
       appId: 'f01cac45-bd1f-4792-a241-cd113222ee6a',
-      guestRoleArn: 'arn:aws:iam::743614351321:role/Cognito_classifieds_prodUnauth_Role'
+      guestRoleArn: 'arn:aws:iam::743614351321:role/RUM-Monitor-us-east-1-743614351321-8877318612561-Unauth',
+      identityPoolId: "us-east-1:78040033-ae7a-4fb1-bd3b-e89889cbf7d3",
+      region: 'us-east-1'
     },
     clientSettings: {
       authority: 'https://classifieds-ui-dev.auth.us-east-1.amazoncognito.com',
