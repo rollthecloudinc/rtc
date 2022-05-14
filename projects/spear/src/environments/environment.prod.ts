@@ -25,7 +25,7 @@ const signingKeys = {
 };
 
 export const environment = {
-  production: false,
+  production: true,
   site: 'card.rollthecloud.com',
   apiGatewaySettings: {
     endpointUrl: 'https://9iac3wy8ej.execute-api.us-east-1.amazonaws.com',
@@ -78,14 +78,14 @@ export const environment = {
   clientSettings: {
     authority: 'https://classifieds-ui-prod.auth.us-east-1.amazoncognito.com',
     client_id: '37lke0kuqac07fs1mk9mp2h471',
-    redirect_uri: 'http://localhost:4000/auth-callback',
-    //redirect_uri: 'https://rollthecloud.com/auth-callback',
+    // redirect_uri: 'http://localhost:4000/auth-callback',
+    redirect_uri: 'https://rollthecloud.com/auth-callback',
     // redirect_uri: 'https://uhf0kayrs4.execute-api.us-east-1.amazonaws.com/auth-callback',
     //redirect_uri: 'https://demo.ng-druid.com/auth-callback',
-    //silent_redirect_uri: 'https://rollthecloud.com/silent-refresh.html',
+    silent_redirect_uri: 'https://rollthecloud.com/silent-refresh.html',
     // silent_redirect_uri: 'https://uhf0kayrs4.execute-api.us-east-1.amazonaws.com/silent-refresh.html',
     // silent_redirect_uri: 'https://demo.ng-druid.com/silent-refresh.html',
-    silent_redirect_uri: 'http://localhost:4000/silent-refresh.html',
+    // silent_redirect_uri: 'http://localhost:4000/silent-refresh.html',
     response_type: "code",
     scope:"openid profile aws.cognito.signin.user.admin ads_api/ads_api taxonomy_api/taxonomy_api chat/chat media_api/media_api profiles_api/profiles_api", /*'ads_api media_api chat IdentityServerApi taxonomy_api api_gateway",*/
     filterProtocolClaims: true,

@@ -211,7 +211,7 @@
           "builder": "@nguniversal/builders:prerender",
           "options": {
             "browserTarget": "spear:build",
-            "serverTarget": "spear:server"
+            "serverTarget": "spear:server:dev"
           },
           "configurations": {
             "production": {}

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Ipe</title>
+  <title>RTC | Roll The Cloud</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -10,6 +10,16 @@
   <link rel="stylesheet" href="https://use.typekit.net/rlg5nvz.css">
   <!-- required for integration with public api bridge -->
   <script type="text/javascript">var bridge;</script>
+  <!-- splunk trial cdn version (recommended)-->
+  <script src="https://cdn.signalfx.com/o11y-gdi-rum/latest/splunk-otel-web.js" crossorigin="anonymous"></script>
+  <script>
+      SplunkRum.init({
+          beaconUrl: "https://rum-ingest.us1.signalfx.com/v1/rum",
+          rumAuth: "47vUpUVP5FE2F8QGqnx5og",
+          app: "rollthecloud.com",
+          environment: "prod"
+          });
+  </script>
 </head>
 <body>
   <app-root></app-root>
