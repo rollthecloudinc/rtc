@@ -56,25 +56,13 @@
                   "with": "projects/spear/src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": false,
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ],
               "extraWebpackConfig": "projects/spear/webpack.prod.config.js"
             }
           },
@@ -211,10 +199,13 @@
           "builder": "@nguniversal/builders:prerender",
           "options": {
             "browserTarget": "spear:build",
-            "serverTarget": "spear:server:dev"
+            "serverTarget": "spear:server"
           },
           "configurations": {
-            "production": {}
+            "production": {
+              "browserTarget": "spear:build:production",
+              "serverTarget": "spear:server:production"
+            }
           }
         }
       }

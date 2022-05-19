@@ -22,12 +22,13 @@ import { ContextModule } from '@ng-druid/context';
 import { ContentModule } from '@ng-druid/content';
 import { AliasModule, CatchAllGuard, CatchAllRouterComponent } from '@ng-druid/alias';
 import { PagealiasModule } from '@ng-druid/pagealias';
-import { PanelsModule, PanelsSettings, PANELS_SETTINGS } from '@ng-druid/panels';
+import { PanelPage, PanelsModule, PanelsSettings, PANELS_SETTINGS } from '@ng-druid/panels';
 import { FormlyModule } from '@ng-druid/formly';
 import { BridgeModule } from '@ng-druid/bridge';
 import { StateModule } from '@ng-druid/state';
 import { AwcogModule, CognitoSettings, COGNITO_SETTINGS } from '@ng-druid/awcog';
 import { KeyvalModule } from '@ng-druid/keyval';
+import { createMatcher, PagesModule, PagesSettings, PAGES_SETTINGS, PanelPageRouterComponent } from '@ng-druid/pages';
 // import { CHAT_SETTINGS, ChatSettings } from '@classifieds-ui/chat';
 // tslint:disable-next-line:nx-enforce-module-boundaries
 // import { PROFILE_SETTINGS, ProfileSettings } from '@classifieds-ui/profiles';
@@ -75,6 +76,8 @@ import { CloudwatchRumSettings, CLOUDWATCH_RUM_SETTINGS, initializeRumMonitorFac
 // import { FlexLayoutServerModule } from '@angular/flex-layout/server';
 // import { MonacoEditorModule } from 'ngx-monaco-editor';
 
+const indexPage = new PanelPage({ id: 'f4c36261-0886-4a6a-8883-7ccf530da319', layoutType: '', displayType: '', gridItems: [], panels: [], layoutSetting: undefined, rowSettings: [], path: '/' });
+
 const routes = [
   { path: 'auth-callback', component: AuthCallbackComponent },
   // Module federation experimentation
@@ -96,7 +99,8 @@ const routes = [
   } },*/
   // { path: '', redirectTo: 'index' },
   //{ path: '**', component: NotFoundComponent }
-  { path: '**', component: CatchAllRouterComponent, canActivate: [ CatchAllGuard ] }
+  //{ path: '**', component: CatchAllRouterComponent, canActivate: [ CatchAllGuard ] }
+  { matcher: createMatcher(indexPage), component: PanelPageRouterComponent, data: { panelPageListItem: indexPage } }
   //{ path: '', redirectTo: 'pages', pathMatch: "full" }
 ];
 
@@ -204,7 +208,8 @@ export function markedOptionsFactory(): MarkedOptions {
     RefineryModule,
     SheathModule,
     NgxDropzoneModule,
-    ReactModule
+    ReactModule,
+    PagesModule
     // JsonschemaModule
     // OktaAuthModule
   ],
@@ -221,6 +226,7 @@ export function markedOptionsFactory(): MarkedOptions {
     { provide: MEDIA_SETTINGS, useValue: new MediaSettings(environment.mediaSettings) },
     { provide: PANELS_SETTINGS, useValue: new PanelsSettings(environment.panelsSettings) },
     { provide: ALIENALIAS_SETTINGS, useValue: new AlienaliasSettings(environment.alienaliasSettings) },
+    { provide: PAGES_SETTINGS, useValue: new PagesSettings({ disableRouting: true }) },
 
     { provide: COGNITO_SETTINGS, useValue: new CognitoSettings(environment.cognitoSettings) },
     { provide: CLOUDWATCH_RUM_SETTINGS, useValue: new CloudwatchRumSettings(environment.rumSettings) },
