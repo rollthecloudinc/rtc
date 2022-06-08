@@ -9,6 +9,6 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: "https://npm.pkg.github.com"
+      - run: npm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GPR_READ_TOKEN }}
-      - run: npm install
