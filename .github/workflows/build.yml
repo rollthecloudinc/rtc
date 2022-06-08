@@ -11,4 +11,4 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
       - run: npm install
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GPR_READ_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.RTC_GITHUB_REGISTRY }}
