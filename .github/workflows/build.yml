@@ -16,4 +16,5 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::989992233821:role/RtcGithubRunner
+          aws-region: us-east-1
       - run: aws s3 sync ./dist/spear s3://classifieds-ui-dev/apps/rollthecloud.com/test
