@@ -50,7 +50,12 @@ resources:
                     - "s3:PutObject"
                     - "s3:GetObject"
                     - "s3:ListObjectsV2"
-                  Resource: "arn:aws:s3:::${bucketName}/apps/${siteName}/test/*"     
+                  Resource:
+                    - Fn::Join:
+                      - ':'
+                      -
+                        - 'arn:aws:s3::'
+                        - ${file(./private.${opt:stage, 'dev'}.json):bucketName}/apps/${file(./private.${opt:stage, 'dev'}.json):siteName}/test/*     
     GithubOidc:
       Type: AWS::IAM::OIDCProvider
       Condition: CreateOIDCProvider
