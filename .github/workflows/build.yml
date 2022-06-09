@@ -12,3 +12,8 @@ jobs:
       - run: npm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.RTC_GITHUB_REGISTRY }}
+  prerender:
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - run: ng run ipe:prerender:production --no-guess-routes --routes-file ./data/routes.txt
