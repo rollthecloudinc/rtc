@@ -16,4 +16,4 @@ jobs:
     runs-on: ubuntu-latest
     needs: setup
     steps:
-      - run: ng run spear:prerender:production --no-guess-routes --routes-file ./data/routes.txt
+      - run: prerender:prod
