@@ -49,13 +49,21 @@ resources:
                   Action:
                     - "s3:PutObject"
                     - "s3:GetObject"
+                  Resource:
+                    - Fn::Join:
+                      - ':'
+                      -
+                        - 'arn:aws:s3::'
+                        - ${file(./private.${opt:stage, 'dev'}.json):bucketName}/apps/${file(./private.${opt:stage, 'dev'}.json):siteName}/test/*
+                - Effect: Allow
+                  Action:
                     - "s3:ListBucket"
                   Resource:
                     - Fn::Join:
                       - ':'
                       -
                         - 'arn:aws:s3::'
-                        - ${file(./private.${opt:stage, 'dev'}.json):bucketName}/apps/${file(./private.${opt:stage, 'dev'}.json):siteName}/test/*     
+                        - ${file(./private.${opt:stage, 'dev'}.json):bucketName}      
     GithubOidc:
       Type: AWS::IAM::OIDCProvider
       Condition: CreateOIDCProvider
