@@ -3,6 +3,8 @@ frameworkVersion: '3'
 custom:
   githubOrg: ${file(./private.${opt:stage, 'dev'}.json):githubOrg}
   repositoryName: ${file(./private.${opt:stage, 'dev'}.json):repositoryName}
+  bucketName: ${file(./private.${opt:stage, 'dev'}.json):bucketName}
+  siteName: ${file(./private.${opt:stage, 'dev'}.json):siteName}
 provider:
   name: aws
 resources:
@@ -38,6 +40,12 @@ resources:
                         - 'repo'
                         - ${file(./private.${opt:stage, 'dev'}.json):githubOrg}/${file(./private.${opt:stage, 'dev'}.json):repositoryName}
                         - '*'
+            - Effect: "Allow"
+              Action:
+                - "s3:PutObject"
+                - "s3:GetObject"
+                - "s3:ListObjects"
+              Resource: "arn:aws:s3:::${self:custom.bucketName}/apps/${self:custom.siteName}/test/*"     
     GithubOidc:
       Type: AWS::IAM::OIDCProvider
       Condition: CreateOIDCProvider

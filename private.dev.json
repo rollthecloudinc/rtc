@@ -1,4 +1,6 @@
 {
   "githubOrg": "rollthecloudinc",
-  "repositoryName": "rtc"
+  "repositoryName": "rtc",
+  "bucketName": "classifieds-ui-dev",
+  "siteName": "rollthecloud.com"
 }
