@@ -13,3 +13,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.RTC_GITHUB_REGISTRY }}
       - run: npm run prerender:prod
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::989992233821:role/RtcGithubRunner
+      - run: aws s3 sync ./dist/spear s3://classifieds-ui-dev/apps/rollthecloud.com/test
