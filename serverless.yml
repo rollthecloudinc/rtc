@@ -40,12 +40,17 @@ resources:
                         - 'repo'
                         - ${file(./private.${opt:stage, 'dev'}.json):githubOrg}/${file(./private.${opt:stage, 'dev'}.json):repositoryName}
                         - '*'
-            - Effect: "Allow"
-              Action:
-                - "s3:PutObject"
-                - "s3:GetObject"
-                - "s3:ListObjects"
-              Resource: "arn:aws:s3:::${self:custom.bucketName}/apps/${self:custom.siteName}/test/*"     
+        Policies:
+          - PolicyName: RtcGithubPolicy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action:
+                    - "s3:PutObject"
+                    - "s3:GetObject"
+                    - "s3:ListObjectsV2"
+                  Resource: "arn:aws:s3:::${bucketName}/apps/${siteName}/test/*"     
     GithubOidc:
       Type: AWS::IAM::OIDCProvider
       Condition: CreateOIDCProvider

@@ -58,3 +58,7 @@ projects/ipe/src/environments/*
 # npm config
 .npmrc
 .npmrc-github
+
+# serverless configs
+private.dev.json
+private.prod.json
