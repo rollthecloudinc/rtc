@@ -15,7 +15,7 @@ jobs:
       - run: npm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.RTC_GITHUB_REGISTRY }}
-      - run: npm run prerender:dev
+      - run: npm run prerender:${{ secrets.ENVIRONMENT_NAME }}
       - uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::989992233821:role/RtcGithubRunner
