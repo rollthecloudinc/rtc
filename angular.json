@@ -49,7 +49,22 @@
             "commonChunk": false
           },
           "configurations": {
-            "production": {
+            "dev": {
+              "outputHashing": "all",
+              "vendorChunk": false,
+              "extractLicenses": true,
+              "buildOptimizer": true,
+              "namedChunks": false,
+              "commonChunk": true,
+              "optimization": true,
+              "fileReplacements": [
+                {
+                  "replace": "projects/spear/src/environments/environment.ts",
+                  "with": "projects/spear/src/environments/environment.dev.ts"
+                }
+              ]
+            },
+            "prod": {
               "outputHashing": "all",
               "vendorChunk": false,
               "extractLicenses": true,
@@ -77,8 +92,8 @@
             "extraWebpackConfig": "projects/spear/webpack.config.js"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "spear:build:production",
+            "prod": {
+              "browserTarget": "spear:build:prod",
               "extraWebpackConfig": "projects/spear/webpack.prod.config.js"
             }
           }
@@ -114,8 +129,11 @@
             "devServerTarget": "spear:serve"
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "spear:serve:production"
+            "dev": {
+              "devServerTarget": "spear:serve:dev"
+            },
+            "prod": {
+              "devServerTarget": "spear:serve:prod"
             }
           }
         },
@@ -130,7 +148,7 @@
             "verbose": true
           },
           "configurations": {
-            "production": {
+            "prod": {
               "bundleDependencies": true,
               "fileReplacements": [
                 {
@@ -142,7 +160,6 @@
               "optimization": true
             },
             "dev": {
-              "outputHashing": "media",
               "bundleDependencies": true,
               "fileReplacements": [
                 {
@@ -150,19 +167,7 @@
                   "with": "projects/spear/src/environments/environment.dev.ts"
                 }
               ],
-              "sourceMap": false,
-              "optimization": true
-            },
-            "dev.local": {
-              "outputHashing": "media",
-              "bundleDependencies": true,
-              "fileReplacements": [
-                {
-                  "replace": "projects/spear/src/environments/environment.ts",
-                  "with": "projects/spear/src/environments/environment.dev.local.ts"
-                }
-              ],
-              "sourceMap": false,
+              "sourceMap": true,
               "optimization": true
             }
           },
@@ -181,6 +186,16 @@
             "sourceMap": true
           },
           "configurations": {
+            "prod": {
+              "optimization": true,
+              "extractLicenses": true,
+              "fileReplacements": [
+                {
+                  "replace": "projects/spear/src/environments/environment.ts",
+                  "with": "projects/spear/src/environments/environment.prod.ts"
+                }
+              ]
+            },
             "dev": {
               "optimization": true,
               "extractLicenses": true,
@@ -201,9 +216,13 @@
             "serverTarget": "spear:server"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "spear:build:production",
-              "serverTarget": "spear:server:production"
+            "dev": {
+              "browserTarget": "spear:build:dev",
+              "serverTarget": "spear:server:dev"
+            },
+            "prod": {
+              "browserTarget": "spear:build:prod",
+              "serverTarget": "spear:server:prod"
             }
           }
         }
