@@ -22,4 +22,4 @@ jobs:
           aws-region: us-east-1
       - run: echo "::set-output name=stamp::$(date +'%Y%m%d%H%M%S')"
         id: release
-      - run: aws s3 sync ./dist/spear s3://classifieds-ui-dev/apps/rollthecloud.com/${{ steps.release.outputs.date }}
+      - run: aws s3 sync ./dist/spear s3://classifieds-ui-dev/apps/rollthecloud.com/${{ steps.release.outputs.stamp }}
