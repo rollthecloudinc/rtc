@@ -54,7 +54,7 @@ resources:
                       - ':'
                       -
                         - 'arn:aws:s3::'
-                        - ${file(./private.${opt:stage, 'dev'}.json):bucketName}/apps/${file(./private.${opt:stage, 'dev'}.json):siteName}/test/*
+                        - ${file(./private.${opt:stage, 'dev'}.json):bucketName}/apps/${file(./private.${opt:stage, 'dev'}.json):siteName}/*
                 - Effect: Allow
                   Action:
                     - "s3:ListBucket"
