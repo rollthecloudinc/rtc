@@ -1,29 +1,36 @@
-name: Build
+name: Deploy
 on:
   push:
     branches:
       - dev
+      - master
 permissions:
   id-token: write
   contents: read
 jobs:
-  setup:
+  dev-deploy:
     runs-on: ubuntu-latest
     environment: dev
     steps:
       - uses: actions/checkout@v3
+        name: Checkout
       - uses: actions/setup-node@v3
+        name: Setup Node
         with:
           node-version: '16.x'
           registry-url: "https://npm.pkg.github.com"
       - run: npm install
+        name: Install packages
         env:
           NODE_AUTH_TOKEN: ${{ secrets.RTC_GITHUB_REGISTRY }}
       - run: npm run prerender:${{ secrets.ENVIRONMENT_NAME }}
       - uses: aws-actions/configure-aws-credentials@v1
+        name: Prerender
         with:
-          role-to-assume: arn:aws:iam::989992233821:role/RtcGithubRunner
+          role-to-assume: ${{ secrets.ROLE }}
           aws-region: us-east-1
       - run: echo "::set-output name=stamp::$(date +'%Y%m%d%H%M%S')"
+        name: Generate Release Stamp
         id: release
-      - run: aws s3 sync ./dist/spear s3://classifieds-ui-dev/apps/rollthecloud.com/${{ steps.release.outputs.stamp }}
+      - run: aws s3 sync ./dist/spear s3://${{ secrets.BUCKET }}/apps/${{ secrets.APP_NAME }}/${{ steps.release.outputs.stamp }}
+        name: Upload to s3
