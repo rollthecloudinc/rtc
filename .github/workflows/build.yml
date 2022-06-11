@@ -30,8 +30,8 @@ jobs:
         id: extraction
       - run: echo ${{ steps.extraction.outputs.originPath }}
       - run: |
-          d=$(echo ${{ steps.cloudfront.outputs.distribution }})
-          p=$(echo ${{ steps.extraction.outputs.originPath }})
+          d=$(${{ steps.cloudfront.outputs.distribution }})
+          p=$(${{ steps.extraction.outputs.originPath }})
           update=$(echo $d | sed "s%$p%/apps/${{ secrets.APP_NAME }}/${{ steps.release.outputs.stamp }}%gi")
           echo "::set-output name=distribution::$(echo $update | jq '.DistributionConfig')"
         name: Replace origin path
