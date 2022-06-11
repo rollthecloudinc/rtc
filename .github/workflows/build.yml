@@ -39,6 +39,6 @@ jobs:
           p=$(echo $d | jq '.DistributionConfig.Origins.Items[0].OriginPath')
           replace=$(echo $d | sed "s%$p%/apps/${{ secrets.APP_NAME }}/${{ steps.release.outputs.stamp }}%gi")
           update=$(echo $replace | jq '.DistributionConfig')
-          result=$(aws cloudfront update-distribution --id E4AYXOHKH4E34 --distribution-config $update --if-match $(echo $p | jq -r '.ETag'))
+          result=$(aws cloudfront update-distribution --id E4AYXOHKH4E34 --distribution-config $update --if-match $(echo $d | jq -r '.ETag'))
           echo "$(echo $result | jq -r '.Distribution.Id + ": " + .Distribution.Status')"
         name: Update Distribution
