@@ -22,7 +22,7 @@ jobs:
         id: release
       - run: |
           d=$(aws cloudfront get-distribution-config --id E4AYXOHKH4E34)
-          echo "::set-output name=distribution::$d"
+          echo "::set-output name=distribution::$(echo $d)"
         name: Get Distribution
         id: cloudfront
       - run: | 
