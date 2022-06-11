@@ -20,7 +20,7 @@ jobs:
       - run: echo "::set-output name=stamp::$(date +'%Y%m%d%H%M%S')"
         name: Generate Release Stamp
         id: release
-      - run: echo "::set-output name=distribution::$(aws cloudfront get-distribution-config --id E4AYXOHKH4E34)"
+      - run: echo "::set-output name=distribution::$(echo aws cloudfront get-distribution-config --id E4AYXOHKH4E34)"
         name: Get Distribution
         id: cloudfront
       - run: | 
