@@ -21,7 +21,7 @@ jobs:
         name: Generate Release Stamp
         id: release
       - run: |
-          d=$(cloudfront get-distribution-config --id E4AYXOHKH4E34)
+          d=$(aws cloudfront get-distribution-config --id E4AYXOHKH4E34)
           echo "::set-output name=distribution::$d"
         name: Get Distribution
         id: cloudfront
