@@ -21,20 +21,7 @@ jobs:
         name: Generate Release Stamp
         id: release
       - run: |
-          d=$(aws cloudfront get-distribution-config --id E4AYXOHKH4E34)
-          echo "::set-output name=distribution::$d"
-        name: Get Distribution
-        id: cloudfront
-      - run: | 
-          echo "::set-output name=originPath::$(echo "${{ steps.cloudfront.outputs.distribution }}" | jq '.DistributionConfig.Origins.Items[0].OriginPath')"
-        name: Extract Origin Path
-        id: extraction
-      - run: echo ${{ steps.extraction.outputs.originPath }}
-      - run: |
-          d=$(echo ${{ steps.cloudfront.outputs.distribution }})
-          p=$(echo ${{ steps.extraction.outputs.originPath }})
-          update=$(echo $d | sed "s%$p%/apps/${{ secrets.APP_NAME }}/${{ steps.release.outputs.stamp }}%gi")
-          echo "::set-output name=distribution::$($update | jq '.DistributionConfig')"
-        name: Replace origin path
-        id: replace
-      - run: echo ${{ steps.replace.outputs.distribution }}
+        d=$(echo aws cloudfront get-distribution-config --id E4AYXOHKH4E34)
+        p=$(echo $d | jq '.DistributionConfig.Origins.Items[0].OriginPath')
+        update=$(echo $d | sed "s%$p%/apps/${{ secrets.APP_NAME }}/${{ steps.release.outputs.stamp }}%gi")
+        echo update
