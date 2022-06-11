@@ -37,7 +37,9 @@ jobs:
       - run: echo "::set-output name=distribution::$(aws cloudfront get-distribution-config --id E4AYXOHKH4E34)"
         name: Get Distribution
         id: cloudfront
-      - run: echo "::set-output name=originPath::$(echo "${{ steps.cloudfront.outputs.distribution }}" | jq '.DistributionConfig.Origins.Items[0].OriginPath')"
+      - run: | 
+          $p=$(echo ${{ steps.cloudfront.outputs.distribution }})
+          echo "::set-output name=originPath::$($p | jq '.DistributionConfig.Origins.Items[0].OriginPath')"
         name: Extract Origin Path
         id: extraction
       - run: echo ${{ steps.extraction.outputs.originPath }}
