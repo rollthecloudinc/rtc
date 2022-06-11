@@ -63,7 +63,16 @@ resources:
                       - ':'
                       -
                         - 'arn:aws:s3::'
-                        - ${file(./private.${opt:stage, 'dev'}.json):bucketName}      
+                        - ${file(./private.${opt:stage, 'dev'}.json):bucketName} 
+                - Effect: Allow
+                  Action:
+                    - "cloudfront:GetDistributionConfig"
+                  Resource: 
+                    Fn::Join:
+                      - '/'
+                      - 
+                        - 'arn:aws:cloudfront::***:distribution'
+                        - ${file(./private.${opt:stage, 'dev'}.json):distribution}
     GithubOidc:
       Type: AWS::IAM::OIDCProvider
       Condition: CreateOIDCProvider
