@@ -149,7 +149,6 @@
           },
           "configurations": {
             "prod": {
-              "outputHashing": "all",
               "bundleDependencies": true,
               "fileReplacements": [
                 {
@@ -161,7 +160,6 @@
               "optimization": true
             },
             "dev": {
-              "outputHashing": "all",
               "bundleDependencies": true,
               "fileReplacements": [
                 {
