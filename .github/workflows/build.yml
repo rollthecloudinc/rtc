@@ -12,6 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     environment: dev
     steps:
+      - uses: aws-actions/configure-aws-credentials@v1
+        name: Prerender
+        with:
+          role-to-assume: ${{ secrets.ROLE }}
+          aws-region: us-east-1
       - run: echo "::set-output name=stamp::$(date +'%Y%m%d%H%M%S')"
         name: Generate Release Stamp
         id: release
