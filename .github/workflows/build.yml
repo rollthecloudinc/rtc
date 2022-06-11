@@ -27,7 +27,7 @@ jobs:
         id: cloudfront
       - run: | 
           d=$(echo ${{ steps.cloudfront.outputs.distribution }})
-          echo "::set-output name=originPath::$($d | jq '.DistributionConfig.Origins.Items[0].OriginPath')"
+          echo "::set-output name=originPath::$(echo $d | jq '.DistributionConfig.Origins.Items[0].OriginPath')"
         name: Extract Origin Path
         id: extraction
       - run: echo ${{ steps.extraction.outputs.originPath }}
