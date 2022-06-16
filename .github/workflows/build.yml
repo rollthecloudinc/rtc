@@ -10,6 +10,7 @@ permissions:
 jobs:
   build-deploy:
     uses: rollthecloudinc/druid/.github/workflows/druid.yml@master
+    environment: prod
     secrets:
       RTC_GITHUB_REGISTRY: ${{ secrets.RTC_GITHUB_REGISTRY }}
       ENVIRONMENT_NAME: ${{ secrets.ENVIRONMENT_NAME }}
