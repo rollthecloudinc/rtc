@@ -10,4 +10,9 @@ permissions:
 jobs:
   build-deploy:
     uses: rollthecloudinc/druid/.github/workflows/druid.yml@master
-    secrets: inherit
+    secrets:
+      RTC_GITHUB_REGISTRY: {{ secrets.RTC_GITHUB_REGISTRY }}
+      ENVIRONMENT_NAME: {{ secrets.ENVIRONMENT_NAME }}
+      SSH_DEPLOY_KEY: {{ secrets.SSH_DEPLOY_KEY }}
+      TARGET_BRANCH: {{ secrets.TARGET_BRANCH }}
+      DESTINATION_REPO: {{ secrets.DESTINATION_REPO }}
