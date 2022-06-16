@@ -10,5 +10,4 @@ permissions:
 jobs:
   build-deploy:
     uses: rollthecloudinc/druid/.github/workflows/druid.yml@master
-    environment: prod
     secrets: inherit
