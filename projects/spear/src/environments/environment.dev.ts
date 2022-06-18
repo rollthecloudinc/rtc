@@ -79,8 +79,8 @@ export const environment = {
   clientSettings: {
     authority: 'https://classifieds-ui-dev.auth.us-east-1.amazoncognito.com',
     client_id: '3lkidn79q4jq8nahkecsguleij',
-    redirect_uri: 'https://d3saavhqmjxl6q.cloudfront.net/auth-callback',
-    silent_redirect_uri: 'https://d3saavhqmjxl6q.cloudfront.net/silent-refresh.html',
+    redirect_uri: 'https://dev.rollthecloud.com/auth-callback',
+    silent_redirect_uri: 'https://dev.rollthecloud.com/silent-refresh.html',
     response_type: "code",
     scope:"openid profile aws.cognito.signin.user.admin ads_api/ads_api taxonomy_api/taxonomy_api chat/chat media_api/media_api profiles_api/profiles_api", /*'ads_api media_api chat IdentityServerApi taxonomy_api api_gateway",*/
     filterProtocolClaims: true,
