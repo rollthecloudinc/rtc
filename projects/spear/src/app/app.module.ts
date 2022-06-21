@@ -77,6 +77,7 @@ import { CloudwatchRumSettings, CLOUDWATCH_RUM_SETTINGS, initializeRumMonitorFac
 // import { MonacoEditorModule } from 'ngx-monaco-editor';
 
 const indexPage = new PanelPage({ id: 'f4c36261-0886-4a6a-8883-7ccf530da319', layoutType: '', displayType: '', gridItems: [], panels: [], layoutSetting: undefined, rowSettings: [], path: '/' });
+const aboutPage = new PanelPage({ id: 'e00eed44-c3c9-4ae6-abc7-916efc61f0ea', layoutType: '', displayType: '', gridItems: [], panels: [], layoutSetting: undefined, rowSettings: [], path: '/about' });
 
 const routes = [
   { path: 'auth-callback', component: AuthCallbackComponent },
@@ -100,6 +101,7 @@ const routes = [
   // { path: '', redirectTo: 'index' },
   //{ path: '**', component: NotFoundComponent }
   //{ path: '**', component: CatchAllRouterComponent, canActivate: [ CatchAllGuard ] }
+  { matcher: createMatcher(aboutPage), component: PanelPageRouterComponent, data: { panelPageListItem: aboutPage } },
   { matcher: createMatcher(indexPage), component: PanelPageRouterComponent, data: { panelPageListItem: indexPage } }
   //{ path: '', redirectTo: 'pages', pathMatch: "full" }
 ];
