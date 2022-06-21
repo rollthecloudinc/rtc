@@ -87,6 +87,10 @@ body {
   margin-bottom: 2em;
 }
 
+.padding-1x {
+  padding: 1em;
+}
+
 .padding-t-x5 {
   padding-top: .5em;
 }
@@ -164,7 +168,7 @@ app-root {
   max-width: 500px;
   margin: 0 auto;
   background-color: white;
-  padding: 1em;
+  // padding: 1em;
 }
 
 .intro {
