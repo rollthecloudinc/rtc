@@ -78,8 +78,6 @@ import { panelpages as panelpages2 } from '../data/panelpages';
 // import { FlexLayoutServerModule } from '@angular/flex-layout/server';
 // import { MonacoEditorModule } from 'ngx-monaco-editor';
 
-const indexPage = new PanelPage({ id: 'f4c36261-0886-4a6a-8883-7ccf530da319', layoutType: '', displayType: '', gridItems: [], panels: [], layoutSetting: undefined, rowSettings: [], path: '/' });
-
 const routes = [
   { path: 'auth-callback', component: AuthCallbackComponent },
   // Module federation experimentation
@@ -102,7 +100,6 @@ const routes = [
   // { path: '', redirectTo: 'index' },
   //{ path: '**', component: NotFoundComponent }
   //{ path: '**', component: CatchAllRouterComponent, canActivate: [ CatchAllGuard ] }
-  // { matcher: createMatcher(indexPage), component: PanelPageRouterComponent, data: { panelPageListItem: indexPage } }
   //{ path: '', redirectTo: 'pages', pathMatch: "full" }
   ...panelpages.map(([id, path]) =>  ({ matcher: createEditMatcher(new PanelPage({ id, layoutType: '', displayType: '', gridItems: [], panels: [], layoutSetting: undefined, rowSettings: [], path })), component: EditPanelPageComponent, data: { panelPageListItem: new PanelPage({ id, layoutType: '', displayType: '', gridItems: [], panels: [], layoutSetting: undefined, rowSettings: [], path }) } })),
   ...panelpages.map(([id, path]) =>  ({ matcher: createMatcher(new PanelPage({ id, layoutType: '', displayType: '', gridItems: [], panels: [], layoutSetting: undefined, rowSettings: [], path })), component: PanelPageRouterComponent, data: { panelPageListItem: new PanelPage({ id, layoutType: '', displayType: '', gridItems: [], panels: [], layoutSetting: undefined, rowSettings: [], path }) } }))
