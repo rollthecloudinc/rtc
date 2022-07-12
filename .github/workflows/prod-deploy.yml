@@ -17,3 +17,4 @@ jobs:
       SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
       DESTINATION_REPO: ${{ secrets.DESTINATION_REPO }}
       TARGET_BRANCH: ${{ secrets.TARGET_BRANCH }}
+      OBJECTS_REPO: ${{ secrets.OBJECTS_REPO }}
