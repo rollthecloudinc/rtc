@@ -65,7 +65,8 @@ export const environment = {
   },
   panelsSettings: {
     openSearchDomain: 'search-classifieds-ui-dev-eldczuhq3vesgpjnr3vie6cagq',
-    s3Bucket: 'classifieds-ui-dev'
+    s3Bucket: 'classifieds-ui-dev',
+    objectsRootUrl: 'https://rollthecloudinc.github.io/rtc-objects'
   },
   alienaliasSettings: {
     openSearchDomain: 'search-classifieds-ui-dev-eldczuhq3vesgpjnr3vie6cagq'
