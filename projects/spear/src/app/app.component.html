@@ -1,9 +1,22 @@
-<div fxLayout="column" fxFill>
-  <div class="top-bar">
-    <a mat-button *ngIf="!isAuthenticated">register</a>
-    <a mat-raised-button color="accent" *ngIf="!isAuthenticated" (click)="login()">login</a>
+<mat-sidenav-container class="example-container" autosize [hasBackdrop]="false" class="transparent">
+
+  <mat-sidenav #drawer fixedInViewport mode="overs" class="sidenav">
+    <div class="close-wrapper">
+      <mat-icon (click)="drawer.close()">close</mat-icon>
+    </div>
+    <nav class="font-copperplate-bold root-nav">
+      <ul>
+        <li><a [routerLink]="['/about']">Home</a></li>
+      </ul>
+    </nav>
+  </mat-sidenav>
+
+  <div class="menu-container">
+    <mat-icon (click)="drawer.open()">menu</mat-icon>
   </div>
+
   <div class="outlet-wrapper">
     <router-outlet></router-outlet>
   </div>
-</div>
+
+</mat-sidenav-container>
