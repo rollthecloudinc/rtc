@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-html, body { height: 100%; }
+html, body { height: 100%; margin: 0; padding: 0 }
 
 a.standard-link {
   color: #141b3f;
@@ -161,14 +161,6 @@ body {
 
 .img-width-70p {
   width: 70%;
-}
-
-app-root {
-  display: block;
-  max-width: 500px;
-  margin: 0 auto;
-  background-color: white;
-  // padding: 1em;
 }
 
 .intro {
