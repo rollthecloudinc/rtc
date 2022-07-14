@@ -31,13 +31,22 @@
 .menu-container {
   position: absolute;
   top: 0;
-  left: 0;
   color: #f5d109;
   border-right: 2px solid #f5d109; 
   border-bottom: 2px solid #f5d109;
   padding-right: .35em;
   padding-top: .25em;
   padding-left: .25em;
+}
+
+@media (max-width: 400px){
+  .menu-container {
+    right: 0;
+    border-right: none; 
+    border-left: 2px solid #f5d109;
+    padding-right: .25em;
+    padding-left: .35em;
+  }
 }
 
 .menu-container:hover {
