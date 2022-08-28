@@ -62,3 +62,6 @@ projects/ipe/src/environments/*
 # serverless configs
 private.dev.json
 private.prod.json
+
+# managed objects
+projects/spear/src/assets/objects/*
