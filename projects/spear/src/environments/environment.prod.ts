@@ -28,13 +28,13 @@ export const environment = {
   production: true,
   site: 'card.rollthecloud.com',
   apiGatewaySettings: {
-    endpointUrl: 'https://9iac3wy8ej.execute-api.us-east-1.amazonaws.com',
+    endpointUrl: 'https://vertigo.druidcloud.io/rtc',
   },
   mediaSettings: {
-    endpointUrl: 'https://9iac3wy8ej.execute-api.us-east-1.amazonaws.com/media',
+    endpointUrl: 'https://vertigo.druidcloud.io/rtc/media',
     cloudinaryUrl: 'https://api.cloudinary.com/v1_1/dj4vvkgzw',
     uploadPreset: 'i0hm4opm',
-    imageUrl: 'https://d1dzxx4k48izyu.cloudfront.net',
+    imageUrl: 'https://vertigo.druidcloud.io/rtc',
     bucket: 'classifieds-ui-prod',
     prefix: 'media/'
   },
@@ -77,7 +77,7 @@ export const environment = {
     region: 'us-east-1'
   },
   clientSettings: {
-    authority: 'https://classifieds-ui-prod.auth.us-east-1.amazoncognito.com',
+    authority: 'https://sso.druidcloud.io',
     client_id: '37lke0kuqac07fs1mk9mp2h471',
     redirect_uri: 'https://rollthecloud.com/auth-callback',
     silent_redirect_uri: 'https://rollthecloud.com/silent-refresh.html',
@@ -90,11 +90,11 @@ export const environment = {
     userStore: undefined,
     metadata: {
       issuer: "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_ObsPF5JdM",
-      authorization_endpoint: "https://classifieds-ui-prod.auth.us-east-1.amazoncognito.com/oauth2/authorize",
-      userinfo_endpoint: "https://classifieds-ui-prod.auth.us-east-1.amazoncognito.com/oauth2/userInfo",
-      end_session_endpoint: "https://classifieds-ui-prod.auth.us-east-1.amazoncognito.com/logout",
-      token_endpoint: "https://classifieds-ui-prod.auth.us-east-1.amazoncognito.com/oauth2/token",
-      jwks_uri: "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_ObsPF5JdM"
+      authorization_endpoint: "https://sso.druidcloud.io/oauth2/authorize",
+      userinfo_endpoint: "https://sso.druidcloud.io/oauth2/userInfo",
+      end_session_endpoint: "https://sso.druidcloud.io/logout",
+      token_endpoint: "https://sso.druidcloud.io/oauth2/token",
+      jwks_uri: "https://sso.druidcloud.io/us-east-1_z8PhK3D8V"
     },
     signingKeys: signingKeys.keys
   }
