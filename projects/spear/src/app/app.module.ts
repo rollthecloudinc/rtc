@@ -73,6 +73,7 @@ import { CloudwatchRumSettings, CLOUDWATCH_RUM_SETTINGS, initializeRumMonitorFac
 import { panelpages } from '../environments/panelpages';
 import { createEditMatcher, createMatcher, EditPanelPageComponent, PagesModule, PanelPageRouterComponent, PagesSettings, PAGES_SETTINGS } from '@rollthecloudinc/pages';
 import { panelpages as panelpages2 } from '../data/panelpages';
+import { OrdainModule } from '@rollthecloudinc/ordain';
 // import { PanelpageModule } from 'panelpage';
 
 // import { FlexLayoutServerModule } from '@angular/flex-layout/server';
@@ -211,7 +212,8 @@ export function markedOptionsFactory(): MarkedOptions {
     SheathModule,
     NgxDropzoneModule,
     ReactModule,
-    PagesModule
+    PagesModule,
+    OrdainModule
     // JsonschemaModule
     // OktaAuthModule
   ],

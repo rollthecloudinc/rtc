@@ -188,6 +188,7 @@ body {
     z-index: 1000;
     top: -12px;
     left: 50%;
+    margin-left: -12px;
   }
 
 }
@@ -195,9 +196,11 @@ body {
 .zero-container {
   height: 125px;
   position: relative;
-  line-height: 125px;
   padding-left: 150px;
-  margin-top: 1em;
+  padding-top: 1.5em;
+  box-sizing: border-box;
+  margin-top: 2.5em;
+  margin-left: 2.25em;
 }
 
 .zero-knockout {
@@ -205,4 +208,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.zero-servers img {
+  left: 1em;
 }
