@@ -1,14 +1,43 @@
 <mat-sidenav-container class="example-container" autosize [hasBackdrop]="false" class="transparent">
 
   <mat-sidenav #drawer fixedInViewport mode="overs" class="sidenav">
-    <div class="close-wrapper">
-      <mat-icon (click)="drawer.close()">close</mat-icon>
+    <div class="root-nav-container">
+      <div class="close-wrapper">
+        <mat-icon (click)="drawer.close()">close</mat-icon>
+      </div>
+      <nav class="font-copperplate-bold root-nav">
+        <ul class="root-ul">
+          <li><a [routerLink]="['/']">Home</a></li>
+          <li class="submenu-item">
+            <div class="submenu-container">
+              <span class="root-link inactive-link">Projects</span>
+              <nav class="submenu-nav">
+                <ul class="submenu-ul">
+                  <li><a [routerLink]="['/projects/sustainable-cloud']">Sustainable Cloud</a>
+                    <nav>
+                      <ul>
+                        <li><a [routerLink]="['/projects/sustainable-cloud/druid']">Druid</a></li>
+                        <li><a [routerLink]="['/projects/sustainable-cloud/vertigo']">Vertigo</a></li>
+                        <li><a [routerLink]="['/projects/sustainable-cloud/spearhead']">Spearhead</a></li>
+                      </ul>
+                    </nav>
+                  </li>
+                  <!-- <li><a [routerLink]="['/projects/sustainable-sites']">Sustainable Sites</a>
+                    <nav>
+                      <ul>
+                        <li><a [routerLink]="['/projects/sustainable-sites/zingurus']">Zingurus</a></li>
+                        <li><a [routerLink]="['/projects/sustainable-sites/classifieds-ui']">Classifieds Ui</a></li>
+                        <li><a [routerLink]="['/projects/sustainable-sites/rapid-climate-force']">Rapid Climate Force</a></li>
+                      </ul>
+                    </nav>
+                  </li> -->
+                </ul>
+              </nav>
+            </div>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <nav class="font-copperplate-bold root-nav">
-      <ul>
-        <li><a [routerLink]="['/']">Home</a></li>
-      </ul>
-    </nav>
   </mat-sidenav>
 
   <div class="menu-container">

@@ -75,6 +75,10 @@ body {
   margin-top: 1em;
 }
 
+.margin-t-15x {
+  margin-top: 1.5em;
+}
+
 .margin-t-2x {
   margin-top: 2em;
 }
@@ -128,6 +132,22 @@ body {
 
 .font-color-brand-dark {
   color: #141b3f;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.width-50p {
+  width: 50%;
 }
 
 .font-baskerville-regular {
@@ -212,4 +232,21 @@ body {
 
 .zero-servers img {
   left: 1em;
+}
+
+.sc-summary-container {
+  background: url(/assets/objects/media/sustainable-cloud.svg) no-repeat top left;
+  min-height: 400px;
+}
+
+.sc-summary-body {
+  padding-top: 200px;
+  margin: 0 40px;
+  line-height: 1.6;
+}
+
+.sc-summary {
+  margin-left: 40px;
+  margin-right: 40px;
+  line-height: 1.5;
 }
